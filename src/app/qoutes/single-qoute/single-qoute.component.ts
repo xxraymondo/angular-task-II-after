@@ -1,6 +1,7 @@
 import { Component, Input,Output,EventEmitter } from '@angular/core';
-import * as quotesData from '../../json/quotes.json';
+
 import { product } from '../../model/products.model'
+import { user } from '../../model/users.model'
 
 
 @Component({
@@ -10,14 +11,18 @@ import { product } from '../../model/products.model'
 })
 export class SingleQouteComponent {
 @Input() ChildInputProduct!:product
+@Input() ChildInputUser!:user
 @Output() deleteQuoteEvent = new EventEmitter<product>();
+@Output() deleteUserEvent = new EventEmitter<user>();
 
 constructor(){
   
  
 }
-deleteProduct(){
-  this.deleteQuoteEvent.emit(this.ChildInputProduct)
+deleteUser(){
+  // this.deleteQuoteEvent.emit(this.ChildInputProduct)
+  this.deleteUserEvent.emit(this.ChildInputUser)
+  
   console.log(this.ChildInputProduct)
 }
 }

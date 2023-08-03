@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { product } from 'src/app/model/products.model';
+import { user } from 'src/app/model/users.model';
 import * as productsData from '../../../../src/app/json/products.json';
+import * as UsersData from '../../../../src/app/json/users.json';
 @Component({
   selector: 'app-all-qoutes',
   templateUrl: './all-qoutes.component.html',
@@ -9,13 +11,15 @@ import * as productsData from '../../../../src/app/json/products.json';
 export class AllQoutesComponent {
 
 products:product[]
-
+users:user[]
 constructor(){
   this.products = Object.values(productsData);
+  this.users=Object.values(UsersData)
 }
-deleteProduct(event:product){
+deleteUser(event:user){
 
-  this.products= this.products.filter(product => product !== event)
+  // this.products= this.products.filter(product => product !== event)
+  this.users= this.users.filter(user => user !== event)
 
 }
 
