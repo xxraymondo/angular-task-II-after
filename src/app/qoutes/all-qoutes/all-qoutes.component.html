@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row ">
+       
+
+        <!-- <div *ngFor="let product of products" class="col-md-2">
+            <div  class="card " style="width: 100%">
+                <img  src={{product.images[1]}} class="card-img-top w-100" style="height: 150px;" alt="...">
+                <div style="height: 200px;" class="card-body  ">
+                  <h5 class="card-title"> {{product.title}}</h5>
+
+                  <button (click)="deleteProduct(product.id)" class="btn btn-danger">delete</button>
+                </div>
+              </div>
+        </div> -->
+     <app-single-qoute *ngFor="let i of products" [ChildInputProduct]="i" 
+     (deleteQuoteEvent)="deleteProduct($event)"
+     ></app-single-qoute>
+    </div>
+</div>

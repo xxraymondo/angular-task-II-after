@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <input type="text" class="form-control mb-5" placeholder="search here for product title" #yourTitleInput  (keyup)="sendit(yourTitleInput.value)">
+
+               
+        
+                <div *ngIf="foundData" class="col-md-2">
+                    <div  class="card " style="width: 100%">
+                        <img  src={{foundData.images[1]}} class="card-img-top w-100" style="height: 150px;" alt="...">
+                        <div style="height: 200px;" class="card-body  ">
+                          <h5 class="card-title"> {{foundData.title}}</h5>
+        
+                          <button type="button"  class="btn btn-danger">delete</button>
+                        </div>
+                      </div>
+                </div>
+        
+    </div>
+</div>
